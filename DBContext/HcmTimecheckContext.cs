@@ -1,5 +1,4 @@
-﻿using API_Net8_OData.Models.HCMSSO;
-using API_Net8_OData.Models.HcmTimecheck;
+﻿using API_Net8_OData.Models.HcmTimecheck;
 using Microsoft.EntityFrameworkCore;
 
 namespace API_Net8_OData.DBContext;
@@ -546,6 +545,9 @@ public partial class HcmTimecheckContext : DbContext
                 .HasDefaultValueSql("b'1'")
                 .HasColumnType("bit(1)")
                 .HasColumnName("web_allowed");
+            entity.HasMany(w => w.WorkingDayAssigment)
+            .WithOne(wd => wd.WorkingDay)
+            .HasForeignKey(wd => wd.WorkingDayId);
         });
 
         modelBuilder.Entity<WorkingDayAssigment>(entity =>

@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace API_Net8_OData.Models.HcmTimecheck;
+﻿namespace API_Net8_OData.Models.HcmTimecheck;
 
 public partial class WorkingDay
 {
+    public WorkingDay()
+    {
+        WorkingDayAssigment = new HashSet<WorkingDayAssigment>();
+    }
+
     public long Id { get; set; }
 
     public int CompanyId { get; set; }
@@ -26,4 +28,6 @@ public partial class WorkingDay
     public ulong? WebAllowed { get; set; }
 
     public ulong? MobileAllowed { get; set; }
+
+    public ICollection<WorkingDayAssigment>? WorkingDayAssigment { get; set; }
 }

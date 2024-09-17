@@ -23,6 +23,7 @@ namespace API_Net8_OData
                     .Filter()
                     .OrderBy()
                     .Count()
+                    .Expand()
                     .SetMaxTop(500)
                     .AddRouteComponents("odata", GetEdmModel()));
 
@@ -51,8 +52,6 @@ namespace API_Net8_OData
 
             app.MapControllers();
 
-                        app.MapAdminUserEndpoints();
-
             app.Run();
         }
 
@@ -60,6 +59,8 @@ namespace API_Net8_OData
         {
             var builder = new ODataConventionModelBuilder();
             builder.EntitySet<TimeCheck>("TimeChecks");
+            builder.EntitySet<WorkingDay>("WorkingDays");
+            builder.EntitySet<WorkingDayAssigment>("WorkingDayAssigments");
             builder.EntitySet<ActionUrl>("ActionUrls");
 
             return builder.GetEdmModel();

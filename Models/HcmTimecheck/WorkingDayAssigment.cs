@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API_Net8_OData.Models.HcmTimecheck;
 
@@ -11,6 +10,7 @@ public partial class WorkingDayAssigment
 
     public int EmployeeId { get; set; }
 
+    [ForeignKey("WorkingDay")]
     public long WorkingDayId { get; set; }
 
     public int StatusId { get; set; }
@@ -26,4 +26,6 @@ public partial class WorkingDayAssigment
     public DateTime? AuditModifiedOn { get; set; }
 
     public long? AuditEmployeeId { get; set; }
+
+    public virtual WorkingDay? WorkingDay { get; set; }
 }

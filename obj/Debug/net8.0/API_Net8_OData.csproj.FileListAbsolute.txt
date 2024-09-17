@@ -245,3 +245,4 @@ C:\Users\YCardenas\Desktop\Console-Tests\API_Net8_OData\obj\Debug\net8.0\refint\
 C:\Users\YCardenas\Desktop\Console-Tests\API_Net8_OData\obj\Debug\net8.0\API_Net8_OData.pdb
 C:\Users\YCardenas\Desktop\Console-Tests\API_Net8_OData\obj\Debug\net8.0\API_Net8_OData.genruntimeconfig.cache
 C:\Users\YCardenas\Desktop\Console-Tests\API_Net8_OData\obj\Debug\net8.0\ref\API_Net8_OData.dll
+C:\Users\YCardenas\Desktop\Console-Tests\API_Net8_OData\obj\Debug\net8.0\API_Net8_OData.sourcelink.json
